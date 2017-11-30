@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+
+  "name": "Botcheck.me",
+  "short_name": "Botcheck.me",
+  "version": "1.0.3",
+  "description": "I use advance machine learning techniques to detect propaganda bots on twitter :)",
+
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "matches": ["https://twitter.com/*"],
+    "run_at": "document_end"
+  }],
+
+  "background": {
+  "scripts": ["background.js"]
+  },
+
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "css": ["styles.css"],
+    "default_title": "Instructions"
+  },
+
+  "icons": {
+    "128": "main.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webNavigation"
+
+  ]
+
+}
