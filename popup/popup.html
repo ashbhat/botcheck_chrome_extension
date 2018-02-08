@@ -1,0 +1,21 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script src="../lib/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div v-if="apiKey">
+      Botcheck is ready. Click the icon on Twitter to check a user.
+    </div>
+    <div v-else>
+      <button @click="authWithTwitter">Authorize with Twitter</button>
+      <p>(Botcheck will never Tweet on your behalf.)</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

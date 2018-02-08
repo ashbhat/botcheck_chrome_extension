@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "Botcheck.me",
+  "short_name": "Botcheck.me",
+  "version": "1.1.0",
+  "description":
+    "Use machine learning techniques to detect propaganda accounts on Twitter.",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "css": ["styles/element.css", "styles/style.css"],
+      "js": [
+        "lib/vue.js",
+        "lib/vuex.js",
+        "lib/element.js",
+        "lib/util.js",
+        "content/components/button-check.js",
+        "content/components/dialog-auth.js",
+        "content/components/dialog-results.js",
+        "content/components/dialog-thanks.js",
+        "content/storeClient.js",
+        "content/injectUI.js"
+      ],
+      "matches": ["https://twitter.com/*"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "lib/vue.js",
+      "lib/vuex.js",
+      "lib/axios.js",
+      "lib/util.js",
+      "background/store.js",
+      "background/storePersist.js",
+      "background/storeServer.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "options/options.html",
+  "permissions": ["storage"],
+  "web_accessible_resources": ["*.ttf", "*.woff"]
+}
