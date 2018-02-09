@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   <script src="../lib/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 
 <body>
   <div id="app">
-    <div v-if="apiKey">
-      Botcheck is ready. Click the icon on Twitter to check a user.
-    </div>
-    <div v-else>
-      <button @click="authWithTwitter">Authorize with Twitter</button>
-      <p>(Botcheck will never Tweet on your behalf.)</p>
-    </div>
+    <h4>To check an account, click the Botcheck.me button on a tweet or profile.</h4>
+    <ul>
+      <li>
+        <a href="https://botcheck.me" target="_blank">Visit botcheck.me site</a>
+      </li>
+      <li>
+        <a href="https://medium.com/@robhat/identifying-propaganda-bots-on-twitter-5240e7cb81a9" target="_blank">How this works</a>
+      </li>
+      <li>
+        <a href="http://twitter.com/theashbhat" target="_blank">Follow us for updates</a>
+      </li>
+    </ul>
+   
   </div>
   <script src="popup.js"></script>
 </body>
