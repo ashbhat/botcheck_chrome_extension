@@ -21,7 +21,7 @@ Vue.component('dialog-auth', {
         return this.$store.state.synced.dialogs.auth.visible;
       },
       set() {
-        this.$store.broadcast('AUTH_CLOSE');
+        this.$store.broadcastMutation('AUTH_CLOSE');
       }
     }
   },

@@ -5,6 +5,7 @@ const apiRoot = 'https://ashbhat.pythonanywhere.com';
 let store = new Vuex.Store({
   state: {
     apiKey: '',
+    clientTabId: -1,
     // Anything in 'synced' will automatically be synchronized
     // with any injected content scripts running
     synced: {
@@ -72,7 +73,6 @@ let store = new Vuex.Store({
       // Don't check network again if we've already done the check
       // This will reset on browser restart
       if (context.state.synced.results[screenName]) {
-        console.log('cache hit');
         context.commit(
           'SCREEN_NAME_CHECK_DONE',
           context.state.synced.results[screenName]
@@ -97,9 +97,23 @@ let store = new Vuex.Store({
         username: context.state.synced.dialogs.results.screenName,
         apikey: context.state.apiKey
       });
+    },
+    RUNTIME_ERROR(context, payload) {
+      let uuid = generateUuid();
+      try {
+        axios.post('https://log.declaredintent.com/entries', {
+          namespace: 'com.declaredintent.botcheck-chrome',
+          useragent: navigator && navigator.userAgent,
+          payload,
+          uuid
+        });
+      } catch (ex) {}
     }
   },
   mutations: {
+    CLIENT_TAB_SET(state, tabId) {
+      state.clientTabId = tabId;
+    },
     AUTH_APIKEY_SET(state, apiKey) {
       state.synced.dialogs.auth.visible = false;
       state.apiKey = apiKey;

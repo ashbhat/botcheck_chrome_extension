@@ -5,31 +5,39 @@
   "version": "1.1.0",
   "description":
     "Use machine learning techniques to detect propaganda accounts on Twitter.",
+  "icons": {
+    "32": "icons/icon32.png",
+    "64": "icons/icon64.png",
+    "128": "icons/icon128.png"
+  },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "content_scripts": [
     {
       "css": ["styles/element.css", "styles/style.css"],
       "js": [
-        "lib/vue.js",
-        "lib/vuex.js",
+        "lib/vue.min.js",
+        "lib/vuex.min.js",
         "lib/element.js",
         "lib/util.js",
+        "lib/errors.js",
         "content/components/button-check.js",
         "content/components/dialog-auth.js",
         "content/components/dialog-results.js",
         "content/components/dialog-thanks.js",
         "content/storeClient.js",
-        "content/injectUI.js"
+        "content/injectButtons.js",
+        "content/injectDialogs.js"
       ],
       "matches": ["https://twitter.com/*"]
     }
   ],
   "background": {
     "scripts": [
-      "lib/vue.js",
-      "lib/vuex.js",
+      "lib/vue.min.js",
+      "lib/vuex.min.js",
       "lib/axios.js",
       "lib/util.js",
+      "lib/errors.js",
       "background/store.js",
       "background/storePersist.js",
       "background/storeServer.js"

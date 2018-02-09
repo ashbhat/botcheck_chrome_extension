@@ -4,10 +4,10 @@ Vue.component('button-check', {
       Botcheck.me
       </el-button>
   `(),
-  props: ['tweet'],
+  props: ['screenName'],
   methods: {
     check() {
-      this.$store.broadcastAction('SCREEN_NAME_CHECK', this.tweet.screenName);
+      this.$store.broadcastAction('SCREEN_NAME_CHECK', this.screenName);
     }
   }
 });

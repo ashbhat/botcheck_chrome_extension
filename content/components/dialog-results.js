@@ -71,7 +71,7 @@ Vue.component('dialog-results', {
         return this.$store.state.synced.dialogs.results.visible;
       },
       set() {
-        this.$store.broadcast('RESULTS_CLOSE');
+        this.$store.broadcastMutation('RESULTS_CLOSE');
       }
     },
     predictionLoaded() {
@@ -86,13 +86,13 @@ Vue.component('dialog-results', {
   },
   methods: {
     disagree() {
-      this.$store.broadcast('RESULTS_CLOSE');
+      this.$store.broadcastMutation('RESULTS_CLOSE');
       this.$store.broadcastAction('DISAGREE', this.results.prediction);
-      this.$store.broadcast('THANKS_OPEN');
+      this.$store.broadcastMutation('THANKS_OPEN');
     },
     share() {
-      this.$store.broadcast('RESULTS_CLOSE');
-      this.$store.broadcast('SHARE', this.screenName);
+      this.$store.broadcastMutation('RESULTS_CLOSE');
+      this.$store.broadcastMutation('SHARE', this.screenName);
     }
   }
 });

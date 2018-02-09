@@ -20,7 +20,7 @@ Vue.component('dialog-thanks', {
         return this.$store.state.synced.dialogs.thanks.visible;
       },
       set() {
-        this.$store.broadcast('THANKS_CLOSE');
+        this.$store.broadcastMutation('THANKS_CLOSE');
       }
     }
   }
