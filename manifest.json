@@ -3,8 +3,7 @@
   "name": "Botcheck.me",
   "short_name": "Botcheck.me",
   "version": "1.1.0",
-  "description":
-    "Use machine learning techniques to detect propaganda accounts on Twitter.",
+  "description": "Use machine learning techniques to detect propaganda accounts on Twitter.",
   "icons": {
     "32": "icons/icon32.png",
     "64": "icons/icon64.png",
@@ -46,7 +45,6 @@
   "browser_action": {
     "default_popup": "popup/popup.html"
   },
-  "options_page": "options/options.html",
   "permissions": ["storage"],
   "web_accessible_resources": ["*.ttf", "*.woff"]
 }

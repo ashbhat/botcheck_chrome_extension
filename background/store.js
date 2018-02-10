@@ -1,13 +1,13 @@
 Vue.use(Vuex);
 
-const apiRoot = 'https://ashbhat.pythonanywhere.com';
+let apiRoot = 'https://ashbhat.pythonanywhere.com';
 
 let store = new Vuex.Store({
   state: {
     apiKey: '',
     clientTabId: -1,
     // Anything in 'synced' will automatically be synchronized
-    // with any injected content scripts running
+    // with any injected content scripts running in tabs
     synced: {
       dialogs: {
         results: {
@@ -33,16 +33,13 @@ let store = new Vuex.Store({
     }
   },
   actions: {
-    AUTH_APIKEY_GET(context, browserToken, screenName) {
+    AUTH_APIKEY_GET(context, browserToken) {
       axios.get(`${apiRoot}/chromekey?token=${browserToken}`).then(res => {
         if (res && res.data && res.data.token) {
           context.commit('AUTH_CLOSE');
           context.commit('AUTH_APIKEY_SET', res.data.token);
           if (context.state.synced.dialogs.auth.screenName) {
-            context.dispatch(
-              'SCREEN_NAME_CHECK',
-              context.state.synced.dialogs.auth.screenName
-            );
+            context.dispatch('SCREEN_NAME_CHECK', context.state.synced.dialogs.auth.screenName);
           }
         }
       });
@@ -51,7 +48,7 @@ let store = new Vuex.Store({
       let browserToken = generateBrowserToken();
       chrome.tabs.create(
         {
-          url: apiRoot + '/chromelogin?token=' + browserToken
+          url: `${apiRoot}/chromelogin?token=${browserToken}`
         },
         authTab => {
           chrome.tabs.onRemoved.addListener(closedTabId => {
@@ -73,10 +70,7 @@ let store = new Vuex.Store({
       // Don't check network again if we've already done the check
       // This will reset on browser restart
       if (context.state.synced.results[screenName]) {
-        context.commit(
-          'SCREEN_NAME_CHECK_DONE',
-          context.state.synced.results[screenName]
-        );
+        context.commit('SCREEN_NAME_CHECK_DONE', context.state.synced.results[screenName]);
         return;
       }
 
@@ -88,6 +82,7 @@ let store = new Vuex.Store({
         .then(result => {
           if (result && result.data) {
             context.commit('SCREEN_NAME_CHECK_DONE', result.data);
+            context.dispatch('LOG', result.data);
           }
         });
     },
@@ -98,11 +93,12 @@ let store = new Vuex.Store({
         apikey: context.state.apiKey
       });
     },
-    RUNTIME_ERROR(context, payload) {
+    LOG(context, payload) {
+      // Log errors/messages/etc to remote logger
       let uuid = generateUuid();
       try {
         axios.post('https://log.declaredintent.com/entries', {
-          namespace: 'com.declaredintent.botcheck-chrome',
+          namespace: 'me.botcheck.chrome-extension',
           useragent: navigator && navigator.userAgent,
           payload,
           uuid
@@ -133,10 +129,10 @@ let store = new Vuex.Store({
       state.synced.dialogs.results.visible = false;
       state.synced.dialogs.results.screenName = '';
     },
-    THANKS_OPEN(state, screenName) {
+    THANKS_OPEN(state) {
       state.synced.dialogs.thanks.visible = true;
     },
-    THANKS_CLOSE(state, screenName) {
+    THANKS_CLOSE(state) {
       state.synced.dialogs.thanks.visible = false;
     },
     AUTH_OPEN(state, screenName) {

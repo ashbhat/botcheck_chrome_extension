@@ -1,14 +1,16 @@
 // Subscribe to state updates on the store and send them down to tabs
 store.subscribe((mutation, state) => {
   // console.log(mutation, state);
-  chrome.tabs.sendMessage(state.clientTabId, {
-    name: 'STATE_UPDATE',
-    payload: state.synced
-  });
+  if (state.clientTabId >= 0) {
+    chrome.tabs.sendMessage(state.clientTabId, {
+      name: 'STATE_UPDATE',
+      payload: state.synced
+    });
+  }
 });
 
 // Listen to incoming messages from tabs
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, sender) => {
   // console.log(request.name, request.details);
 
   // We need to know which tab to send messages to,

@@ -59,9 +59,8 @@ Vue.component('dialog-results', {
       let dialogScreenName = this.$store.state.synced.dialogs.results.screenName;
       if (results && results[dialogScreenName]) {
         return results[dialogScreenName];
-      } else {
-        return {};
       }
+      return {};
     },
     loading() {
       return this.$store.state.synced.dialogs.results.loading;
@@ -78,10 +77,7 @@ Vue.component('dialog-results', {
       return typeof this.results.prediction !== 'undefined';
     },
     profileImage() {
-      return (
-        this.results.profile_image &&
-        this.results.profile_image.replace('http:', 'https:')
-      );
+      return this.results.profile_image && this.results.profile_image.replace('http:', 'https:');
     }
   },
   methods: {

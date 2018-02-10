@@ -7,15 +7,15 @@ function initData() {
     return;
   }
 
-  let initData;
+  let jsonData;
 
   try {
-    initData = JSON.parse(document.querySelector('#init-data').value);
+    jsonData = JSON.parse(document.querySelector('#init-data').value);
   } catch (ex) {
-    window.logException(ex);
+    errorHandler(ex);
   }
 
-  return initData;
+  return jsonData;
 }
 
 function injectButtons() {
@@ -24,8 +24,8 @@ function injectButtons() {
   document.querySelectorAll('.ProfileHeaderCard, .ProfileCard').forEach(processProfileEl);
 
   // Then we set up an observer to do the same for any future tweets/profiles
-  // that get added to the DOM
-  const observer = new MutationObserver(mutations => {
+  // that get added to the DOM because e.g. the user scrolled down or opened a tweet
+  let observer = new MutationObserver(mutations => {
     mutations.forEach(mutation => {
       mutation.addedNodes.forEach(addedNode => {
         if (!addedNode.querySelectorAll) {
@@ -34,9 +34,7 @@ function injectButtons() {
         // Tweets
         addedNode.querySelectorAll('.tweet').forEach(processTweetEl);
         // Profile pages
-        addedNode
-          .querySelectorAll('.ProfileHeaderCard, .ProfileCard')
-          .forEach(processProfileEl);
+        addedNode.querySelectorAll('.ProfileHeaderCard, .ProfileCard').forEach(processProfileEl);
         // Hover profiles
         if (addedNode.classList.contains('ProfileCard')) {
           processProfileEl(addedNode);
@@ -52,11 +50,7 @@ function injectButtons() {
 
 // Process a Tweet and add the Botcheck button to it
 function processTweetEl(tweetEl) {
-  if (
-    !tweetEl.dataset ||
-    !tweetEl.dataset.screenName ||
-    tweetEl.dataset.botcheckInjected
-  ) {
+  if (!tweetEl.dataset || !tweetEl.dataset.screenName || tweetEl.dataset.botcheckInjected) {
     return;
   }
 
@@ -65,7 +59,7 @@ function processTweetEl(tweetEl) {
   let screenName = getScreenNameFromElement(tweetEl);
 
   let el = document.createElement('span');
-  el.innerHTML = `<button-check :screen-name="screenName"></button-check>`;
+  el.innerHTML = '<button-check :screen-name="screenName"></button-check>';
   tweetEl.querySelector('.ProfileTweet-actionList').appendChild(el);
 
   new Vue({
@@ -98,7 +92,7 @@ function processProfileEl(profileEl) {
 
   // Insert button below screen name
   let el = document.createElement('div');
-  el.innerHTML = `<button-check :screen-name="screenName"></button-check>`;
+  el.innerHTML = '<button-check :screen-name="screenName"></button-check>';
   profileEl
     .querySelector('.ProfileHeaderCard-screenname, .ProfileCard-screenname')
     .insertAdjacentElement('afterend', el);

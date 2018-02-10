@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "prefer-const": "off",
+    "func-names": "off",
+    "no-console": "off",
+    "no-debugger": "off",
+    "comma-dangle": "off",
+    "no-use-before-define": "off",
+    "prefer-destructuring": "off",
+    "arrow-parens": "off",
+    "space-before-function-paren": "off",
+    "no-param-reassign": "off",
+    "consistent-return": "off",
+    "no-unused-vars": "off",
+    "no-new": "off",
+    "no-empty": "off"
+  },
+  "globals": {
+    "chrome": true,
+    "store": true,
+    "Vue": true,
+    "Vuex": true,
+    "axios": true,
+    "injectDialogs": true,
+    "injectButtons": true,
+    "errorHandler": true,
+    "generateBrowserToken": true,
+    "generateUuid": true,
+    "html": true
+  }
+}
