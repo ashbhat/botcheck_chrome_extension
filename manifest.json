@@ -21,6 +21,7 @@
         "lib/errors.js",
         "content/components/button-check.js",
         "content/components/dialog-auth.js",
+        "content/components/dialog-error.js",
         "content/components/dialog-results.js",
         "content/components/dialog-thanks.js",
         "content/storeClient.js",
