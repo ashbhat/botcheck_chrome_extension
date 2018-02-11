@@ -18,6 +18,10 @@ let store = new Vuex.Store({
         thanks: {
           visible: false
         },
+        error: {
+          visible: false,
+          message: ''
+        },
         auth: {
           screenName: '',
           visible: false
@@ -81,8 +85,12 @@ let store = new Vuex.Store({
         })
         .then(result => {
           if (result && result.data) {
-            context.commit('SCREEN_NAME_CHECK_DONE', result.data);
-            context.dispatch('LOG', result.data);
+            if (result.data.error) {
+              context.commit('SCREEN_NAME_CHECK_ERROR', result.data.error);
+            } else if (typeof result.data.prediction !== 'undefined') {
+              context.commit('SCREEN_NAME_CHECK_DONE', result.data);
+              context.dispatch('LOG', result.data);
+            }
           }
         });
     },
@@ -118,6 +126,11 @@ let store = new Vuex.Store({
       Vue.set(state.synced.results, result.username, result);
       state.synced.dialogs.results.loading = false;
     },
+    SCREEN_NAME_CHECK_ERROR(state, message) {
+      state.synced.dialogs.results.visible = false;
+      state.synced.dialogs.error.visible = true;
+      state.synced.dialogs.error.message = message;
+    },
     RESULTS_OPEN(state, screenName) {
       if (!state.synced.results[screenName]) {
         state.synced.dialogs.results.loading = true;
@@ -141,6 +154,9 @@ let store = new Vuex.Store({
     },
     AUTH_CLOSE(state) {
       state.synced.dialogs.auth.visible = false;
+    },
+    ERROR_CLOSE(state) {
+      state.synced.dialogs.error.visible = false;
     },
     SHARE(context, screenName) {
       chrome.tabs.create({
