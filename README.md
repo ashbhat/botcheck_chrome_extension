@@ -1,3 +1,12 @@
 # Botcheck.me Chrome Extension
 
-### v0.0.1 release - fair warning, the code might still be messy
+A chrome extension that uses machine learning techniques to detect propaganda accounts on Twitter.
+
+## Details
+
+This extension uses [Vue.js](https://vuejs.org/) with [element](http://element.eleme.io) for UI components, along with [Vuex](https://vuex.vuejs.org/en/intro.html) to manage state.
+
+## Further reading
+
+* [Chrome extension development](https://developer.chrome.com/extensions)
+* [Botcheck.me](https://botcheck.me)
