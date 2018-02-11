@@ -2,7 +2,7 @@ Vue.component('dialog-results', {
   template: html`
     <el-dialog :visible.sync="dialogVisible" :class="{ 'botcheck-result-positive': results.prediction, 'botcheck-dialog': true }">
       <el-container v-loading="loading">
-    
+
         <el-header height="auto">
           <h1 v-if="results.prediction === true">
             Propaganda Bot like patterns found
@@ -11,7 +11,7 @@ Vue.component('dialog-results', {
             Propaganda Bot like patterns not found
           </h1>
         </el-header>
-    
+
         <el-main>
           <img :src="profileImage" class="botcheck-profile-image" v-if="predictionLoaded">
           <span v-if="results.prediction === true">
@@ -24,29 +24,26 @@ Vue.component('dialog-results', {
             to political propaganda accounts.
           </span>
         </el-main>
-    
+
         <el-footer height="auto" v-if="predictionLoaded">
           <el-row type="flex" align="middle">
-    
+
             <el-col :span="12">
               <a href="https://medium.com/@robhat/identifying-propaganda-bots-on-twitter-5240e7cb81a9" target="_blank">How this works</a>
               &bull;
               <a href="http://twitter.com/theashbhat" target="_blank">Follow us for updates</a>
             </el-col>
-    
+
             <el-col :span="12" class="text-right">
               <el-button size="medium" round @click="disagree" class="u-textUserColorHover u-borderUserColorHover">
                 Disagree
               </el-button>
-              <el-button size="medium" round @click="share" v-if="results.prediction == true">
-                Share
-              </el-button>
               <el-button size="medium" round type="primary" @click="dialogVisible = false" class="u-bgUserColor u-borderUserColor u-bgUserColorDarkHover">Close</el-button>
             </el-col>
-    
+
           </el-row>
         </el-footer>
-    
+
       </el-container>
       </el-dialog>
   `(),

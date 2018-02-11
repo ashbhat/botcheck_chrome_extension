@@ -144,7 +144,7 @@ let store = new Vuex.Store({
     },
     SHARE(context, screenName) {
       chrome.tabs.create({
-        url: `https://twitter.com/intent/tweet/?text=I+just+found+out+@${screenName}+is+likely+a+foreign+propaganda+account%2C+by+using+the+botcheck+browser+extension%21+You+can+download+it+from+their+site+at+https%3A%2F%2Fbotcheck.me+and+check+for+yourself.`
+        url: `https://twitter.com/intent/tweet/?text=I+just+found+out+@${screenName}+is+likely+a+propaganda+account%2C+by+using+the+botcheck+browser+extension%21+You+can+download+it+from+https%3A%2F%2Fbotcheck.me+and+check+for+yourself.`
       });
     }
   }
