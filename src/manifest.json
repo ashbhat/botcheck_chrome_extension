@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Botcheck.me",
+  "short_name": "Botcheck.me",
+  "version": "1.3.3",
+  "description": "Uses machine learning techniques to detect propaganda accounts on Twitter.",
+  "icons": {
+    "128": "icons/default@128-gray-square.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "css": ["injected.css"],
+      "js": ["injected.js"],
+      "matches": ["https://twitter.com/*"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "vendor/browser-polyfill.js",
+      "content/namespace.js",
+      "content/util.js",
+      "background/index.js",
+      "background/storage.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/default@16-gray.png",
+      "128": "icons/default@128-gray.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "https://botcheck2-dot-surfsafe-rbl.appspot.com/*",
+    "https://log.declaredintent.com/*"
+  ],
+  "web_accessible_resources": ["*.ttf", "*.woff","*.png","*.svg"]
+}

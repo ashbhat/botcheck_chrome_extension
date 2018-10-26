@@ -1,24 +1,21 @@
 {
+  "extends": "airbnb-base",
   "env": {
     "browser": true,
     "es6": true
   },
-  "extends": "airbnb",
   "rules": {
-    "prefer-const": "off",
-    "func-names": "off",
-    "no-console": "off",
-    "no-debugger": "off",
-    "comma-dangle": "off",
-    "no-use-before-define": "off",
-    "prefer-destructuring": "off",
-    "arrow-parens": "off",
-    "space-before-function-paren": "off",
-    "no-param-reassign": "off",
-    "consistent-return": "off",
-    "no-unused-vars": "off",
-    "no-new": "off",
-    "no-empty": "off"
+    "comma-dangle": 0,
+    "consistent-return": 0,
+    "function-paren-newline": ["error", "never"],
+    "implicit-arrow-linebreak": ["off"],
+    "no-param-reassign": 0,
+    "no-underscore-dangle": 0,
+    "no-shadow": 0,
+    "no-console": 0,
+    "no-plusplus": 0,
+    "prefer-destructuring": 0,
+    "func-names": ["error", "as-needed"]
   },
   "globals": {
     "chrome": true,
@@ -26,11 +23,8 @@
     "Vue": true,
     "Vuex": true,
     "axios": true,
-    "injectDialogs": true,
-    "injectButtons": true,
-    "errorHandler": true,
-    "generateBrowserToken": true,
-    "generateUuid": true,
-    "html": true
+    "botcheckScanner": true,
+    "botcheckUtils": true,
+    "botcheckConfig": true
   }
 }

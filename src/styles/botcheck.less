@@ -1,0 +1,231 @@
+@twitterTextGrey: #657786;
+@lightGrey: #BFBFBF;
+@botcheckRed: #FB0015;
+@botcheckLightRed: #FFD6D7;
+@botcheckGreen: #00D68C;
+@black: #333333;
+@lightBlack: #666666;
+
+// Fix for when liner extension pushes botcheck status
+// out of the line, on feed tweets
+.ProfileTweet-actionList.js-actions {
+  white-space: nowrap;
+}
+
+// .el-dropdown-menu is appended to body,
+// so it sits outside .botcheck
+.el-dropdown-menu {
+	z-index: 5001 !important;
+}
+
+.el-dropdown-item {
+	font-size: 13px;
+}
+
+.botcheck-feed-container {
+	display: inline-block;
+	// For when other extensions are present
+	padding-right: 20px;
+}
+
+.botcheck {
+  position: relative;
+	color: @twitterTextGrey;
+	font-size: 14px;
+	line-height: 1;
+	cursor: pointer;
+	top: 1px;
+  white-space: nowrap;
+
+  &.reply {
+    top: 0;
+    margin: 1px 0 8px 8px;
+  }
+
+	&.retweet {
+		margin-top: 2px;
+		margin-left: 3px;
+	}
+
+  &.profile {
+    margin: 8px 0px;
+  }
+
+  &.small-profile {
+    margin: 6px 0 12px 0;
+  }
+
+	.icon {
+		width: 18px;
+		height: 18px;
+		position: absolute;
+    bottom: -1px;
+    background-image: none !important;
+		display: inline-block;
+
+		img {
+			width: 18px;
+			display: inline-block;
+		}
+	}
+
+	.status-text {
+		padding-left: 22px;
+		line-height: 1;
+		color: @twitterTextGrey;
+		vertical-align: middle;
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+		font-size: 14px;
+		display: inline-block;
+
+		&.bot {
+			color: @botcheckRed;
+		}
+	}
+
+	&.button {
+		border-radius: 25px;
+		background: @botcheckLightRed;
+		user-select: none;
+		cursor: pointer;
+		margin-top: 0;
+		margin-left: 0;
+		height: 24px;
+
+		.icon {
+			position: relative;
+			vertical-align: middle;
+			padding-left: 10px;
+			padding-top: 1px;
+			width: 18px;
+			display: inline-block;
+		}
+
+		.status-text {
+			padding-left: 4px;
+			padding-right: 10px;
+			vertical-align: middle;
+			margin-top: 3px;
+			font-size: 12px;
+		}
+	}
+
+	&.inline {
+		display: inline-block;
+	}
+
+	&.pull-up {
+		margin-top: -4px;
+		margin-left: 4px;
+	}
+}
+
+.botcheck-dialog {
+	z-index: 5000 !important;
+
+	.el-dialog {
+		width: 640px;
+    border-radius: 8px;
+
+    &__header {
+      padding: 0;
+    }
+
+		&__close {
+			color: @black;
+		}
+
+    &__body {
+      padding: 20px;
+    }
+	}
+
+	.el-container {
+		padding: 0 20px;
+	}
+
+	.el-main {
+    padding-left: 0;
+		padding-top: 10px;
+		padding-bottom: 0;
+	}
+
+  .el-footer {
+    padding: 0;
+  }
+
+	.el-dropdown {
+		position: absolute;
+		top: 1.25em;
+		right: 3.5em;
+	}
+
+	.el-icon-arrow-down {
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+	img {
+		width: 80px;
+		display: inline-block;
+	}
+
+	.header {
+		font-size: 17px;
+		font-weight: bold;
+		display: block;
+		margin-bottom: 10px;
+		letter-spacing: 0.4px;
+		color: @black;
+	}
+
+	strong {
+		color: @black;
+	}
+
+	span:not(.header) {
+		font-size: 16px;
+		line-height: 1.5;
+		letter-spacing: 0.4px;
+	}
+
+  button.remove-from-whitelist {
+    margin-top: 16px !important;
+    float: right;
+  }
+
+	.share-link {
+		text-align: right;
+		margin-top: 16px;
+
+		i {
+			font-size: 18px;
+			color: @botcheckRed;
+			vertical-align: middle;
+		}
+
+		span {
+			font-size: 13px;
+			display: inline-block;
+			margin-left: 4px;
+			color: @botcheckRed;
+			vertical-align: middle;
+			margin-top: 2px;
+		}
+
+		&.positive {
+			i {
+				color: @botcheckGreen;
+			}
+
+			span {
+				color: @botcheckGreen;
+			}
+		}
+	}
+
+	.botcheck-dialog-buttons-wrapper {
+		margin-top: 10px;
+	}
+}

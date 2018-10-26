@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D8ADAC32177650F0086D6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8ADAC22177650F0086D6AD /* AppDelegate.swift */; };
+		0D8ADAC52177650F0086D6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8ADAC42177650F0086D6AD /* ViewController.swift */; };
+		0D8ADAC7217765100086D6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D8ADAC6217765100086D6AD /* Assets.xcassets */; };
+		0D8ADACA217765100086D6AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8ADAC8217765100086D6AD /* Main.storyboard */; };
+		0D8ADAD9217765500086D6AD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8ADAD8217765500086D6AD /* Cocoa.framework */; };
+		0D8ADADC217765500086D6AD /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8ADADB217765500086D6AD /* SafariExtensionHandler.swift */; };
+		0D8ADADE217765500086D6AD /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8ADADD217765500086D6AD /* SafariExtensionViewController.swift */; };
+		0D8ADAE1217765500086D6AD /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8ADADF217765500086D6AD /* SafariExtensionViewController.xib */; };
+		0D8ADAE4217765500086D6AD /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D8ADAE3217765500086D6AD /* script.js */; };
+		0D8ADAE6217765500086D6AD /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D8ADAE5217765500086D6AD /* ToolbarItemIcon.pdf */; };
+		0D8ADAEA217765500086D6AD /* BotCheck for Twitter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D8ADAD6217765500086D6AD /* BotCheck for Twitter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0DB090112178A89F00E9B3F9 /* build in Resources */ = {isa = PBXBuildFile; fileRef = 0DB090102178A89F00E9B3F9 /* build */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D8ADAE8217765500086D6AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D8ADAB72177650F0086D6AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D8ADAD5217765500086D6AD;
+			remoteInfo = "BotCheck for Twitter";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0D8ADAEE217765500086D6AD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0D8ADAEA217765500086D6AD /* BotCheck for Twitter.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0D8ADABF2177650F0086D6AD /* BotCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BotCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D8ADAC22177650F0086D6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0D8ADAC42177650F0086D6AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0D8ADAC6217765100086D6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D8ADAC9217765100086D6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0D8ADACB217765100086D6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D8ADACC217765100086D6AD /* BotCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BotCheck.entitlements; sourceTree = "<group>"; };
+		0D8ADAD6217765500086D6AD /* BotCheck for Twitter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BotCheck for Twitter.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D8ADAD8217765500086D6AD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D8ADADB217765500086D6AD /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		0D8ADADD217765500086D6AD /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		0D8ADAE0217765500086D6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		0D8ADAE2217765500086D6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D8ADAE3217765500086D6AD /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		0D8ADAE5217765500086D6AD /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		0D8ADAE7217765500086D6AD /* BotCheck_for_Twitter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BotCheck_for_Twitter.entitlements; sourceTree = "<group>"; };
+		0DA7302D217A037D00F0E6FE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		0DB090102178A89F00E9B3F9 /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D8ADABC2177650F0086D6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D8ADAD3217765500086D6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D8ADAD9217765500086D6AD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D8ADAB62177650F0086D6AD = {
+			isa = PBXGroup;
+			children = (
+				0D8ADAC12177650F0086D6AD /* BotCheck */,
+				0D8ADADA217765500086D6AD /* BotCheck for Twitter */,
+				0D8ADAD7217765500086D6AD /* Frameworks */,
+				0D8ADAC02177650F0086D6AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D8ADAC02177650F0086D6AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D8ADABF2177650F0086D6AD /* BotCheck.app */,
+				0D8ADAD6217765500086D6AD /* BotCheck for Twitter.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D8ADAC12177650F0086D6AD /* BotCheck */ = {
+			isa = PBXGroup;
+			children = (
+				0D8ADAC22177650F0086D6AD /* AppDelegate.swift */,
+				0D8ADAC42177650F0086D6AD /* ViewController.swift */,
+				0D8ADAC6217765100086D6AD /* Assets.xcassets */,
+				0D8ADAC8217765100086D6AD /* Main.storyboard */,
+				0D8ADACB217765100086D6AD /* Info.plist */,
+				0D8ADACC217765100086D6AD /* BotCheck.entitlements */,
+			);
+			path = BotCheck;
+			sourceTree = "<group>";
+		};
+		0D8ADAD7217765500086D6AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D8ADAD8217765500086D6AD /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D8ADADA217765500086D6AD /* BotCheck for Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				0DB090102178A89F00E9B3F9 /* build */,
+				0D8ADADB217765500086D6AD /* SafariExtensionHandler.swift */,
+				0D8ADADD217765500086D6AD /* SafariExtensionViewController.swift */,
+				0D8ADADF217765500086D6AD /* SafariExtensionViewController.xib */,
+				0D8ADAE2217765500086D6AD /* Info.plist */,
+				0DA7302D217A037D00F0E6FE /* icon.png */,
+				0D8ADAE3217765500086D6AD /* script.js */,
+				0D8ADAE5217765500086D6AD /* ToolbarItemIcon.pdf */,
+				0D8ADAE7217765500086D6AD /* BotCheck_for_Twitter.entitlements */,
+			);
+			path = "BotCheck for Twitter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D8ADABE2177650F0086D6AD /* BotCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D8ADACF217765100086D6AD /* Build configuration list for PBXNativeTarget "BotCheck" */;
+			buildPhases = (
+				0D8ADABB2177650F0086D6AD /* Sources */,
+				0D8ADABC2177650F0086D6AD /* Frameworks */,
+				0D8ADABD2177650F0086D6AD /* Resources */,
+				0D8ADAEE217765500086D6AD /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D8ADAE9217765500086D6AD /* PBXTargetDependency */,
+			);
+			name = BotCheck;
+			productName = BotCheck;
+			productReference = 0D8ADABF2177650F0086D6AD /* BotCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D8ADAD5217765500086D6AD /* BotCheck for Twitter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D8ADAEB217765500086D6AD /* Build configuration list for PBXNativeTarget "BotCheck for Twitter" */;
+			buildPhases = (
+				0D8ADAD2217765500086D6AD /* Sources */,
+				0D8ADAD3217765500086D6AD /* Frameworks */,
+				0D8ADAD4217765500086D6AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BotCheck for Twitter";
+			productName = "BotCheck for Twitter";
+			productReference = 0D8ADAD6217765500086D6AD /* BotCheck for Twitter.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D8ADAB72177650F0086D6AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = SwishLabs;
+				TargetAttributes = {
+					0D8ADABE2177650F0086D6AD = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					0D8ADAD5217765500086D6AD = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 0D8ADABA2177650F0086D6AD /* Build configuration list for PBXProject "BotCheck" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D8ADAB62177650F0086D6AD;
+			productRefGroup = 0D8ADAC02177650F0086D6AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D8ADABE2177650F0086D6AD /* BotCheck */,
+				0D8ADAD5217765500086D6AD /* BotCheck for Twitter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D8ADABD2177650F0086D6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D8ADAC7217765100086D6AD /* Assets.xcassets in Resources */,
+				0D8ADACA217765100086D6AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D8ADAD4217765500086D6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D8ADAE6217765500086D6AD /* ToolbarItemIcon.pdf in Resources */,
+				0DB090112178A89F00E9B3F9 /* build in Resources */,
+				0D8ADAE1217765500086D6AD /* SafariExtensionViewController.xib in Resources */,
+				0D8ADAE4217765500086D6AD /* script.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D8ADABB2177650F0086D6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D8ADAC52177650F0086D6AD /* ViewController.swift in Sources */,
+				0D8ADAC32177650F0086D6AD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D8ADAD2217765500086D6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D8ADADE217765500086D6AD /* SafariExtensionViewController.swift in Sources */,
+				0D8ADADC217765500086D6AD /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D8ADAE9217765500086D6AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D8ADAD5217765500086D6AD /* BotCheck for Twitter */;
+			targetProxy = 0D8ADAE8217765500086D6AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D8ADAC8217765100086D6AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D8ADAC9217765100086D6AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0D8ADADF217765500086D6AD /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D8ADAE0217765500086D6AD /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D8ADACD217765100086D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0D8ADACE217765100086D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0D8ADAD0217765100086D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BotCheck/BotCheck.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q552XM5CS3;
+				INFOPLIST_FILE = BotCheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swishlabs.BotCheck.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		0D8ADAD1217765100086D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BotCheck/BotCheck.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q552XM5CS3;
+				INFOPLIST_FILE = BotCheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swishlabs.BotCheck.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		0D8ADAEC217765500086D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BotCheck for Twitter/BotCheck_for_Twitter.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q552XM5CS3;
+				INFOPLIST_FILE = "BotCheck for Twitter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swishlabs.BotCheck.mac.BotCheck-for-Twitter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		0D8ADAED217765500086D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BotCheck for Twitter/BotCheck_for_Twitter.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q552XM5CS3;
+				INFOPLIST_FILE = "BotCheck for Twitter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swishlabs.BotCheck.mac.BotCheck-for-Twitter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D8ADABA2177650F0086D6AD /* Build configuration list for PBXProject "BotCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D8ADACD217765100086D6AD /* Debug */,
+				0D8ADACE217765100086D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D8ADACF217765100086D6AD /* Build configuration list for PBXNativeTarget "BotCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D8ADAD0217765100086D6AD /* Debug */,
+				0D8ADAD1217765100086D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D8ADAEB217765500086D6AD /* Build configuration list for PBXNativeTarget "BotCheck for Twitter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D8ADAEC217765500086D6AD /* Debug */,
+				0D8ADAED217765500086D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D8ADAB72177650F0086D6AD /* Project object */;
+}

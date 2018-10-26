@@ -1,0 +1,166 @@
+@textColor: #303030;
+@secondaryTextColor: #666;
+@lightGrey: #E5E5E5;
+@lightBlue: #ebfbff;
+@botcheckRed: #FB0015;
+@blue: #00aced;
+@almostWhite: #f9f9f9;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  font-size: 75%;
+  color: @textColor;
+}
+
+.secondary-text {
+  color: @secondaryTextColor;
+}
+
+a {
+  text-decoration: none;
+  color: @blue;
+}
+
+ul {
+  list-style-type: none;
+  padding: 6px 0 6px 0;
+  margin: 0;
+
+  li:not(.divider) {
+    display: block;
+
+    &:hover {
+      background-color: @lightBlue;
+    }
+
+    a {
+      font-size: 13px;
+      color: @secondaryTextColor;
+      text-decoration: none;
+      display: block;
+      padding: 8px 15px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  li.divider {
+    display: block;
+    height: 1px;
+    background: @lightGrey;
+    margin: 8px 0;
+  }
+}
+
+#main-view {
+  width: 250px;
+}
+
+#whitelist-view {
+  width: 300px;
+  height: fit-content;
+}
+
+.whitelist-table {
+  margin-bottom: 16px;
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: auto;
+
+  .whitelist-item {
+
+    .remove-button {
+      font-weight: bold;
+      font-size: 20px;
+      color: @botcheckRed;
+      border-radius: 999px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #E5E5E5;
+      }
+
+      i {
+        padding: 3px;
+      }
+    }
+  }
+}
+
+.whitelist-header-text {
+  color: #666666;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  padding: 10px;
+  margin-left: 28px;
+}
+
+.whitelist-header {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.whitelist-item {
+  position: relative;
+  height: 52px;
+}
+
+.whitelist-item:hover {
+  background-color: #F6F6F6;
+}
+
+.un-whitelist-item {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  margin-right: -124px;
+  margin-top: -10px;
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.whitelist-item-real-name {
+  color: #666666;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: -0.17px;
+  line-height: 16px;
+  padding-top: 8px;
+  padding-left: 16px;
+}
+
+.whitelist-item-handle {
+  color: #B3B3B3;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: -0.15px;
+  line-height: 16px;
+  padding-top: 4px;
+  padding-left: 16px;
+  padding-bottom: 8px;
+}
+
+.whitelist-go-back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -135px;
+  margin-top: -10px;
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.whitelist-empty {
+  color: #666666;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: -0.15px;
+  line-height: 16px;
+  padding: 15px;
+}
