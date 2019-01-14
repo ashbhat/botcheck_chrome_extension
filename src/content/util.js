@@ -3,7 +3,6 @@
  *
  * Utility methods.
  */
-
 BC.util = {
   generateBrowserToken() {
     let text = '';

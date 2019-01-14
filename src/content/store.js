@@ -355,21 +355,23 @@ const store = new Vuex.Store({ // eslint-disable-line no-unused-vars
     },
     LOG(context, payload) {
       console.log('(botcheck) action: LOG');
-      // Log errors/messages/etc to remote logger
-      const uuid = BC.util.generateUuid();
+      /*
+        // Log errors/messages/etc to remote logger
+        const uuid = BC.util.generateUuid();
 
-      axios
-        .post('https://log.declaredintent.com/entries', {
-          namespace: 'me.botcheck.chrome-extension',
-          useragent: navigator && navigator.userAgent,
-          payload,
-          uuid
-        })
-        .catch((e) => {
-          console.error(e);
-          console.error('Unable to log to declared intent. Attempted to send payload:');
-          console.error(payload);
-        });
+        axios
+          .post('https://log.declaredintent.com/entries', {
+            namespace: 'me.botcheck.chrome-extension',
+            useragent: navigator && navigator.userAgent,
+            payload,
+            uuid
+          })
+          .catch((e) => {
+            console.error(e);
+            console.error('Unable to log to declared intent. Attempted to send payload:');
+            console.error(payload);
+          });
+      */
     }
   }
 });

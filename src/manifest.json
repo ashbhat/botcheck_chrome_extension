@@ -18,6 +18,7 @@
   "background": {
     "scripts": [
       "vendor/browser-polyfill.js",
+      "config.js",
       "content/namespace.js",
       "content/util.js",
       "background/index.js",
@@ -35,7 +36,8 @@
     "storage",
     "tabs",
     "https://botcheck2-dot-surfsafe-rbl.appspot.com/*",
-    "https://log.declaredintent.com/*"
+    "https://log.declaredintent.com/*",
+    "https://botcheck-cms.herokuapp.com/*"
   ],
   "web_accessible_resources": ["*.ttf", "*.woff","*.png","*.svg"]
 }
