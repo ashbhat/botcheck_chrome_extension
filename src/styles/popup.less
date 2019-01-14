@@ -6,6 +6,9 @@
 @blue: #00aced;
 @almostWhite: #f9f9f9;
 
+// Make v-cloak work
+[v-cloak] { display:none; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -60,18 +63,18 @@ ul {
   width: 250px;
 }
 
-#whitelist-view {
+#options-view {
   width: 300px;
   height: fit-content;
 }
 
-.whitelist-table {
+.options-table {
   margin-bottom: 16px;
   height: 200px;
   overflow-y: auto;
   overflow-x: auto;
 
-  .whitelist-item {
+  .options-item {
 
     .remove-button {
       font-weight: bold;
@@ -91,7 +94,20 @@ ul {
   }
 }
 
-.whitelist-header-text {
+.language-options-table .options-item {
+
+  >div {
+    height: auto;
+    padding: 20px 0 16px 20px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #E5E5E5;
+  }
+}
+
+.options-header-text {
   color: #666666;
   font-size: 16px;
   letter-spacing: -0.2px;
@@ -99,17 +115,17 @@ ul {
   margin-left: 28px;
 }
 
-.whitelist-header {
+.options-header {
   position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.whitelist-item {
+.options-item {
   position: relative;
   height: 52px;
 }
 
-.whitelist-item:hover {
+.options-item:hover {
   background-color: #F6F6F6;
 }
 
@@ -124,7 +140,7 @@ ul {
   cursor: pointer;
 }
 
-.whitelist-item-real-name {
+.options-item-real-name {
   color: #666666;
   font-size: 14px;
   font-weight: bold;
@@ -134,7 +150,7 @@ ul {
   padding-left: 16px;
 }
 
-.whitelist-item-handle {
+.options-item-handle {
   color: #B3B3B3;
   font-size: 12px;
   font-weight: 300;
@@ -145,7 +161,7 @@ ul {
   padding-bottom: 8px;
 }
 
-.whitelist-go-back {
+.options-go-back {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -156,7 +172,7 @@ ul {
   cursor: pointer;
 }
 
-.whitelist-empty {
+.options-empty {
   color: #666666;
   font-size: 13px;
   font-weight: 300;

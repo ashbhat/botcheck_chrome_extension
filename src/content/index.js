@@ -73,23 +73,42 @@ function begin(apiKey) {
   BC.xbrowser.storage.get(null).then((state) => {
     state = state || {};
 
-    if (!state.whitelist) {
-      state.whitelist = {};
-    }
-    store.dispatch('LOAD_WHITELIST', state.whitelist);
+    if (!state.lang) {
+      state.lang = BC.internationalization.getTwitterLang();
 
-    if (!state.results) {
-      state.results = {};
+      console.log('(botcheck) Storing lang setting:', state.lang);
+      BC.xbrowser.storage.set({ lang: state.lang });
     }
-    store.commit('LOAD_DEEPSCAN_RESULTS', state.results);
 
-    BC.util.onDOMReady(() => {
-      botcheckScanner.injectButtons();
-      botcheckScanner.injectDialogs();
+    // Load internationalization data
+    BC.internationalization.load(state.lang).then(() => {
+      console.log('(botcheck) Loaded internationalization data and served callbacks');
+
+      if (!state.whitelist) {
+        state.whitelist = {};
+      }
+      store.dispatch('LOAD_WHITELIST', state.whitelist);
+
+      if (!state.results) {
+        state.results = {};
+      }
+      store.commit('LOAD_DEEPSCAN_RESULTS', state.results);
+
+      BC.util.onDOMReady(() => {
+        botcheckScanner.injectButtons();
+        botcheckScanner.injectDialogs();
+      });
     });
-  });
 
-  registerListeners();
+    registerListeners();
+
+  }).catch((e) => {
+    console.error(`
+      (botcheck) Something went wrong when initializing Botcheck.
+      The extension won\'t be loaded on this tab.
+    `);
+    throw e;
+  });
 }
 
 // On fresh page load, if the URL has the apikey lets get it.

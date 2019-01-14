@@ -11,6 +11,7 @@ const OUTPUT_DIR_SAFARI = 'safari/Botcheck for Twitter/build/';
 const paths = {
   scripts: {
     src: [
+      'src/config.js',
       'src/content/namespace.js',
       'src/vendor/browser-polyfill.js',
       'src/vendor/vue.js',
@@ -18,6 +19,7 @@ const paths = {
       'src/vendor/element.js',
       'src/vendor/axios.js',
       'src/vendor/lockr.js',
+      'src/vendor/internationalization.js',
       'src/content/util.js',
       'src/content/xbrowser.js',
       'src/content/components/botcheck-status.js',
@@ -53,6 +55,7 @@ function clean() {
 function copy() {
   // Copy these folders and contents as is
   gulp.src([
+    'src/config.js',
     'src/background/**',
     'src/content/**',
     'src/popup/**',
